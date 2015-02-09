@@ -56,11 +56,13 @@ svg {
 
 .button {
   position: absolute;
+  float: left;
 }
 
 .button1{
   position: absolute;
   top: 620px;
+  float: left;
 }
 
 .source{
