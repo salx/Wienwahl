@@ -1,6 +1,10 @@
 /*
 Todo:
 
+öfter auf "weitere" hängt SVG an
+
+2006 dazu
+
 Positioning in DOM - align SVGs, text - button SVG 1, button Vergleich, text button weitere, SVGs, Credits
 
 Positioning of numbers - wie berechne ich jeweils den Minimumwert der "vergleich" Zahlen. Davon
@@ -249,7 +253,7 @@ function bla(){
             return "Mandate"
             break;
           case "n":
-            return "Ungewichtet (+0)"
+            return "ohne (+0)"
             break;
           case "n5":
             return "ab 2020 (+0,5)"
@@ -475,7 +479,7 @@ function weitere( file ){
             return "Mandate"
             break;
           case "n":
-            return "Ungewichtet (+0)"
+            return "ohne (+0)"
             break;
           case "n5":
             return "ab 2020 (+0,5)"
