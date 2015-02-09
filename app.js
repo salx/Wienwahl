@@ -39,7 +39,7 @@ http://oe1.orf.at/artikel/374311
 function bla(){
 
 	var margin = {top: 10, right: 10, bottom: 30, left: 80,},
-		width = 730 - margin.left - margin.right;
+		width = 735 - margin.left - margin.right;
 		height = 150 - margin.top - margin.bottom;
 
   //ordinal scale for "verfahren"
@@ -75,7 +75,7 @@ function bla(){
     .attr("width", width  + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom )
     .append("g")
-    .attr("transform", "translate(" + 82 + ","+ 38 + ")");
+    .attr("transform", "translate(" + 87 + ","+ 38 + ")");
 
   svg.append("text")
     .text("2010")
@@ -259,7 +259,7 @@ function bla(){
           case "n6":
             return "2015 (+0,6)"
           case "n75":
-            return "2015 (+0,75)"
+            return "Vorschlag (+0,75)"
         }
       })
       .style("fill", "black")
@@ -284,7 +284,7 @@ bla();
 //function to call other three charts
 function weitere( file ){
   var margin = {top: 10, right: 10, bottom: 30, left: 80,},
-    width = 730 - margin.left - margin.right;
+    width = 735 - margin.left - margin.right;
     height = 150 - margin.top - margin.bottom;
 
   //ordinal scale for "verfahren"
@@ -310,7 +310,7 @@ function weitere( file ){
     .attr("width", width  + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom )
     .append("g")
-    .attr("transform", "translate(" + 82 + ","+ 38 + ")");
+    .attr("transform", "translate(" + 87 + ","+ 38 + ")");
 
   svg.append("text")
     .text( function(d){
