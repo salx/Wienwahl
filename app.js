@@ -2,28 +2,13 @@
 Todo:
 
 mehrmals auf "weitere" hängt SVG an
-
-Positioning in DOM - align SVGs, text - button SVG 1, button Vergleich, text button weitere, SVGs, Credits
+Umlaute
 
 Positioning of numbers - wie berechne ich jeweils den Minimumwert der "vergleich" Zahlen. Davon
 möchte ich die Position berechnen.
 Oder: wie mache ich ein Hintergrund-Kastl?
 
-style text (bold? biger?)
-Umlaute
-Komma statt Punkt
-
-more space between year-labeling and bars
-positioning buttons & svg
-
-Button nach oben - so dass er sich nicht mit dem Mouseover überlagert.
-style labels for verfahren  
-
-button styling
-
-calculate 0.6
-
-fix mousover-layover
+Komma statt Punkt 
 
 DONE: correct size for orf screens (Ö1 und ORF.at)
 ORF.at: 
@@ -44,7 +29,7 @@ function bla(){
 
   //ordinal scale for "verfahren"
   var y = d3.scale.ordinal()
-    .rangeRoundBands([20, height]); //schalter f. abstand zw. Balken & Abstand zur Jahreszahl
+    .rangeRoundBands([20, height]); //f. abstand zw. Balken & Abstand zur Jahreszahl
     //.rangeRoundBands([0, height], 0.1, 0);
 
   //linear scale for "mandate"
@@ -54,7 +39,7 @@ function bla(){
   //to assign party colors. Could also be done with an ordinal scale
   var color = {"SPO":"#d41328", "OVP": "#060000", "FPO":"#2453a1", "Grune": "#84b414"};
 
-  //tooltip - mainly for debugging
+  //tooltip - mainly for debugging, not really necessary
   var tip = d3.tip()
     .attr("class", "d3-tip")
     .offset([-5, 20])
@@ -83,8 +68,6 @@ function bla(){
       .attr("x", 5)
       .attr("y", -13) //handle for distance between first bar and year
       .attr("class", "heading")
-      //.attr("dy", "0.65em")
-      //.attr("text-anchor", "start");
 
   //call tip
   svg.call(tip);
@@ -147,24 +130,11 @@ function bla(){
         .classed('eins', function(d) { return d.verfahren === 'eins'; } )
         .classed('vergleich', function(d) { return d.verfahren !== 'eins' && d.verfahren !== 'stimmen'; } )
         .classed("stimmen", function(d){ return d.verfahren == "stimmen"; })
-      
-    //create bars
-    /*
-    verfahren.selectAll(".rect")
-      .data(function(d){ return d.mandate; })
-      .enter()
-      .append("rect")
-      .classed('eins', function(d) { return d.verfahren === 'eins'; } )
-      .classed('vergleich', function(d) { return d.verfahren !== 'eins'; } )
-      .on("mouseover", tip.show)
-      .on("mouseout", tip.hide)
-    */
 
     function reveal( what ) {
       
       verfahren.selectAll('rect.' + what)
       .transition().duration(2500)
-      //.each("start", console.log("start"))
       .each("end", function(d){ 
           verfahren.selectAll("text." + what)
             .text(function(d){ 
@@ -188,9 +158,8 @@ function bla(){
                 return (x(d.x1-d.x0)-17);
               }else{
                 return (x(d.x1-d.x0)-17);
-                //lege ein Array aller Mandate dieser Partei an
-                //nimm den kleinsten Wert
-                //berechne daraus das x
+                // evtl: Array aller Mandate einer Partei 
+                //x(kleinster Wert)
               }
             })
             .attr("y", function(d){
@@ -205,7 +174,6 @@ function bla(){
       //set the height according to "verfahren"
       .attr("height", function(d){
           if(d.verfahren == "eins"){
-            //return y.rangeBand()/2 ;
             return 16;
           }else if(d.verfahren =="stimmen"){
             return 6;
@@ -267,10 +235,9 @@ function bla(){
       .attr("dy", "0.1em")
       .attr("text-anchor", "end");
 
-    //muss hier drinnen stehen, sonst funktioniert das select nicht. Wieso?
     d3.select(".button1").on("click", function(){
       reveal("vergleich"),
-      weitere( "2005.tsv" ); //weiß die methode so, dass ich ein File übergebe? Ja. Hat funktioniert!!
+      weitere( "2005.tsv" );
       weitere( "2001.tsv" );
       weitere( "1996.tsv" );
     });
@@ -305,7 +272,6 @@ function weitere( file ){
     .html( function(d){return "<text>"+ d.name + ":"+ (d.x1-d.x0) +" Mandate"+ "</text>" });
 
     //add svg
-  
   var svg = d3.select("body").append("svg")
     .attr("width", width  + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom )
@@ -395,7 +361,6 @@ function weitere( file ){
     function reveal( what ) {
       verfahren.selectAll('rect.' + what)
       .transition().duration(2500)
-      //.each("start", console.log("start"))
       .each("end", function(d){ 
           verfahren.selectAll("text." + what)
             .text(function(d){ 
@@ -419,9 +384,7 @@ function weitere( file ){
                 return (x(d.x1-d.x0)-17);
               }else{
                 return (x(d.x1-d.x0)-17);
-                //lege ein Array aller Mandate dieser Partei an
-                //nimm den kleinsten Wert
-                //berechne daraus das x
+                //evtl. s.o.
               }
             })
             .attr("y", function(d){
@@ -495,8 +458,6 @@ function weitere( file ){
       .attr("dy", "0.1em")
       .attr("text-anchor", "end");
 
-    //d3.select(".button").on("click", function( ) {
-      //reveal( 'vergleich' );
     });
 
   }
