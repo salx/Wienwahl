@@ -21,6 +21,11 @@ text {
   font: 10px sans-serif;
 }
 
+svg {
+  float: left;
+  margin: 15px;
+}
+
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -50,10 +55,19 @@ text {
 }
 
 .button {
-  /*
   position: absolute;
-  align: left;
-  */  
+}
+
+.button1{
+  position: absolute;
+  top: 620px;
+}
+
+.source{
+  position: absolute;
+  top: 370px;
+  left: 550px;
+  font-size: 10px;
 }
 
 div.checkbox {
