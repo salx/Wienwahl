@@ -1,9 +1,7 @@
 /*
 Todo:
 
-öfter auf "weitere" hängt SVG an
-
-2006 dazu
+mehrmals auf "weitere" hängt SVG an
 
 Positioning in DOM - align SVGs, text - button SVG 1, button Vergleich, text button weitere, SVGs, Credits
 
@@ -197,7 +195,7 @@ function bla(){
             })
             .attr("y", function(d){
               if(d.verfahren == "stimmen"){
-                return -7;
+                return -9;
               }else{
                 return -3;
               }
@@ -225,11 +223,11 @@ function bla(){
           }
             
         })
-      .attr( "transform", function(d){ //move 1st bar to top, so space is evenly distributed
+      .attr( "transform", function(d){ //move 2nd bar to top, so space is evenly distributed
           if(d.verfahren == "eins"){
             return "translate(0," + -14 + ")";
           }else if(d.verfahren == "stimmen"){
-            return "translate(0," + -4 + ")"; //move 2nd bar a bit mor to the top
+            return "translate(0," + -7 + ")"; //move 1st bar a bit mor to the top
           }
         })
     }
@@ -258,6 +256,8 @@ function bla(){
           case "n5":
             return "ab 2020 (+0,5)"
             break;
+          case "n6":
+            return "2015 (+0,6)"
           case "n75":
             return "2015 (+0,75)"
         }
@@ -426,7 +426,7 @@ function weitere( file ){
             })
             .attr("y", function(d){
               if(d.verfahren == "stimmen"){
-                return -7;
+                return -9;
               }else{
                 return -3;
               }
@@ -457,7 +457,7 @@ function weitere( file ){
         if(d.verfahren == "eins"){
           return "translate(0," + -14 + ")";
         }else if(d.verfahren == "stimmen"){
-          return "translate(0," + -4 + ")"; //move 2nd bar a bit mor to the top
+          return "translate(0," + -7 + ")"; //move 2nd bar a bit mor to the top
         }
       })
     }
@@ -484,8 +484,10 @@ function weitere( file ){
           case "n5":
             return "ab 2020 (+0,5)"
             break;
+          case "n6":
+            return "2015 (+0,6)"
           case "n75":
-            return "2015 (+0,75)"
+            return "Vorschlag (+0,75)"
         }
       })
       .style("fill", "black")

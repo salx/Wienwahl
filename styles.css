@@ -63,7 +63,7 @@ svg {
 
 .button1{
   position: absolute;
-  top: 630px;
+  top: 720px;
   float: left;
   left: 10px;
   margin: 10px;
@@ -71,8 +71,8 @@ svg {
 
 .source{
   position: absolute;
-  top: 370px;
-  left: 550px;
+  top: 408px;
+  left: 500px;
   font-size: 10px;
 }
 
