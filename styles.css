@@ -15,6 +15,7 @@ body {
 
 div.standard{
   width: 500px;
+  margin-top: 30px;
 }
 
 text {
@@ -25,6 +26,7 @@ svg {
   float: left;
   margin: 15px;
 }
+
 
 .d3-tip {
   line-height: 1;
@@ -63,7 +65,7 @@ svg {
 
 .button1{
   position: absolute;
-  top: 840px;
+  top: 1090px;
   float: left;
   left: 10px;
   margin: 10px;
@@ -71,9 +73,11 @@ svg {
 
 .source{
   position: absolute;
-  top: 425px;
   left: 500px;
+  top: 625px;
   font-size: 10px;
+  /*margin: 20px;*/
+  padding: 5px;
 }
 
 div.checkbox {

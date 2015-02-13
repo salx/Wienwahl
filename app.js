@@ -1,31 +1,25 @@
 /*
 Todo:
-
 mehrmals auf "weitere" hängt SVG an
 Umlaute
-
 Positioning of numbers - wie berechne ich jeweils den Minimumwert der "vergleich" Zahlen. Davon
 möchte ich die Position berechnen.
 Oder: wie mache ich ein Hintergrund-Kastl?
-
 Komma statt Punkt 
-
 DONE: correct size for orf screens (Ö1 und ORF.at)
 ORF.at: 
 max. 800 breit, 326 hoch (aber geht auch mehr)
 http://orf.at/wahl/nr13/ergebnisse/#ergebnisse
-
 Ö1:
 max 779 breit
 996 hoch (aber da geht auch)
 http://oe1.orf.at/artikel/374311
-
 */
 function bla(){
 
-	var margin = {top: 10, right: 10, bottom: 30, left: 80,},
-		width = 735 - margin.left - margin.right;
-		height = 150 - margin.top - margin.bottom;
+  var margin = {top: 10, right: 10, bottom: 30, left: 80,},
+    width = 735 - margin.left - margin.right;
+    height = 150 - margin.top - margin.bottom;
 
   //ordinal scale for "verfahren"
   var y = d3.scale.ordinal()
@@ -73,14 +67,14 @@ function bla(){
   svg.call(tip);
 
   //add the data
-	d3.tsv("2010_neu.tsv", function(error, data){
+  d3.tsv("2010_neu.tsv", function(error, data){
 
     var partei = ( d3.keys( data[0]).filter( function(key){return key !== "verfahren"; } ) );
 
     data.forEach(function(d){
-			x0 = 0;
+      x0 = 0;
       d.mandate = partei.map(function(name){ return {name: name, verfahren: d.verfahren, x0: x0, x1: x0 += +d[name]} });
-		})
+    })
 
     //set domains
     y.domain(data.map(function(d){return d.verfahren; }) );
@@ -461,6 +455,3 @@ function weitere( file ){
     });
 
   }
-
-
-
