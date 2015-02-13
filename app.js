@@ -64,7 +64,7 @@ function bla(){
       .attr("class", "heading")
 
   //call tip
-  svg.call(tip);
+  //svg.call(tip);
 
   //add the data
   d3.tsv("2010_neu.tsv", function(error, data){
@@ -291,7 +291,7 @@ function weitere( file ){
       .attr("class", "heading")
 
   //call tip
-  svg.call(tip);
+  //svg.call(tip);
   
   //add the data
   d3.tsv( file, function(error, data){
