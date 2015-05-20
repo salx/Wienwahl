@@ -25,8 +25,14 @@ text {
 svg {
   float: left;
   margin: 15px;
+  margin-top: 30px;
 }
 
+svg1{
+  float: left;
+  margin: 15px;
+  margin-top: 30px;
+}
 
 .d3-tip {
   line-height: 1;
@@ -65,7 +71,7 @@ svg {
 
 .button1{
   position: absolute;
-  top: 1220px;
+  top: 740px;
   float: left;
   left: 10px;
   margin: 10px;
@@ -74,7 +80,7 @@ svg {
 .source{
   position: absolute;
   left: 500px;
-  top: 625px;
+  top: 640px;
   font-size: 10px;
   /*margin: 20px;*/
   padding: 5px;
